@@ -1,0 +1,13 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Derviq — Agent Control & Trust</title><link rel="stylesheet" href="/ui/styles.css"></head>
+<body>
+<header><b>DERVIQ</b><nav><a href="#architecture">Architecture</a><a href="#features">12 Core</a><a href="#live">Live Control</a><a href="/docs">API</a></nav></header>
+<main>
+<section class="hero"><span class="eyebrow">NEUTRAL AGENT CONTROL PLANE</span><h1>Control what AI is allowed to do.</h1><p>Derviq is a cross-vendor control and evidence layer for agents operating across clouds, models, SaaS and internal systems.</p><div class="badges"><span>PostgreSQL</span><span>Fail-closed</span><span>KMS-ready</span><span>WORM-ready</span></div></section>
+<section id="architecture"><h2>Control loop</h2><div class="flow"><b>Identity</b><i>→</i><b>Delegation</b><i>→</i><b>Risk Policy</b><i>→</i><b>Authority</b><i>→</i><b>Action</b><i>→</i><b>Evidence</b><i>→</i><b>Recovery</b></div></section>
+<section id="features"><h2>12 core capabilities</h2><div id="cards" class="grid"></div></section>
+<section id="live"><h2>Real control-plane status</h2><p>This console reads the running Derviq API. It does not fake cloud/payment success.</p><div class="panel"><button onclick="loadHealth()">Refresh</button><pre id="out">Waiting…</pre></div></section>
+<section><h2>Integration posture</h2><div id="integrations" class="grid"></div></section>
+</main><footer>Derviq · production-oriented reference implementation</footer>
+<script src="/ui/app.js"></script></body></html>
