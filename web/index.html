@@ -23,12 +23,14 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;ba
 a{color:inherit;text-decoration:none}
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
+:focus-visible{outline:2px solid var(--mint);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{transition:none}.btn{transition:none}}
 .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
 .nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:relative;z-index:20}
 .logo{display:flex;align-items:center;gap:10px;font-weight:950;letter-spacing:.16em;font-size:18px}
 .logo-mark{width:29px;height:29px;border:1px solid rgba(143,255,193,.55);border-radius:9px;display:grid;place-items:center;background:rgba(143,255,193,.07);box-shadow:0 0 30px rgba(143,255,193,.08)}
 .logo-mark:after{content:"";width:9px;height:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 18px var(--mint)}
-.navlinks{display:flex;gap:24px;color:var(--muted);font-size:13px}
+.navlinks{display:flex;gap:18px;color:var(--muted);font-size:12.5px;align-items:center}.navlinks a{white-space:nowrap}.navlinks a[href="/docs"]{color:var(--soft)}.navlinks a[href="/docs"]:hover{color:var(--mint)}
 .navlinks a:hover{color:var(--text)}
 .nav-actions{display:flex;gap:9px;align-items:center}
 .pill{border:1px solid var(--line);padding:8px 12px;border-radius:999px;color:var(--soft);font-size:12px;background:rgba(255,255,255,.02)}
@@ -36,7 +38,7 @@ button{cursor:pointer}
 .btn:hover{transform:translateY(-2px);border-color:#314356}
 .btn-primary{background:var(--mint);color:#06100b;border-color:var(--mint);box-shadow:0 12px 45px rgba(143,255,193,.12)}
 .btn-ghost{background:rgba(255,255,255,.025)}
-.menu{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:9px}
+ .menu{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:9px}.navlinks.mobile-open{display:flex}.api-nav{white-space:nowrap;border-color:rgba(143,255,193,.24)}.api-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.endpoint-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}.endpoint-card{border:1px solid var(--line);border-radius:16px;padding:18px;background:var(--panel)}.endpoint-card code{display:block;color:var(--mint);font:800 11px ui-monospace,SFMono-Regular,Menlo,monospace;margin-bottom:7px}.endpoint-card p{margin:0;color:var(--muted);font-size:12px}.api-note{margin-top:16px;color:#718095;font-size:11px}
 .hero{padding:115px 0 105px;display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
 .eyebrow{font-size:11px;font-weight:950;letter-spacing:.18em;text-transform:uppercase;color:var(--mint)}
 .hero h1{font-size:clamp(55px,7.5vw,102px);line-height:.91;letter-spacing:-.065em;margin:20px 0 25px;max-width:900px}
@@ -108,11 +110,12 @@ input:focus,select:focus{border-color:#3a5269;box-shadow:0 0 0 3px rgba(121,167,
 .phase{padding:24px;background:var(--panel);border-right:1px solid var(--line);min-height:220px}.phase:last-child{border:0}.phase b{display:block;color:var(--mint);font-size:11px;letter-spacing:.13em}.phase h3{margin-top:15px}.phase p{color:var(--muted);font-size:13px}
 .faq{display:grid;gap:10px;max-width:950px}.faq details{border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:18px 20px}.faq summary{cursor:pointer;font-weight:800}.faq p{color:var(--muted);margin:13px 0 0}
 .cta{padding:100px 0}.cta-box{border:1px solid rgba(143,255,193,.2);border-radius:28px;padding:55px;background:radial-gradient(circle at 85% 20%,rgba(143,255,193,.12),transparent 35%),linear-gradient(145deg,#0c1714,#080c11);display:flex;justify-content:space-between;gap:40px;align-items:center}
-footer{border-top:1px solid var(--line);padding:45px 0 60px;color:var(--muted)}.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:30px}.foot b{color:var(--text)}.foot a{display:block;margin-top:8px;font-size:13px}.fine{border-top:1px solid var(--line);margin-top:35px;padding-top:22px;font-size:11px;color:#657487}
+footer{border-top:1px solid var(--line);padding:45px 0 60px;color:var(--muted)}.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:30px}.foot>div{min-width:0}.foot b{color:var(--text)}.foot a{display:block;margin-top:8px;font-size:13px;overflow-wrap:anywhere}.foot p{max-width:280px}.fine{border-top:1px solid var(--line);margin-top:35px;padding-top:22px;font-size:11px;color:#657487}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}.reveal.in{opacity:1;transform:none}
 .toast{position:fixed;right:20px;bottom:20px;z-index:100;background:#0d151c;border:1px solid #2a3b4c;border-radius:12px;padding:13px 16px;box-shadow:0 20px 60px #0008;display:none}.toast.show{display:block}
 @media(max-width:1000px){.hero,.split,.founder,.investor-grid{grid-template-columns:1fr}.hero{padding-top:80px}.flow-wide{grid-template-columns:1fr}.flow-line{transform:rotate(90deg)}.roadmap{grid-template-columns:1fr 1fr}.demo-body{grid-template-columns:1fr}.form{border-right:0;border-bottom:1px solid var(--line)}.foot{grid-template-columns:1fr 1fr}}
-@media(max-width:700px){.wrap{width:min(var(--max),calc(100% - 28px))}.navlinks,.nav-actions .pill{display:none}.menu{display:block}.grid,.grid-2,.roadmap,.statbar{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.stat:last-child{border-bottom:0}.hero h1{font-size:53px}.hero{gap:35px}.cta-box{display:block}.cta-box .btn{margin-top:25px}.foot{grid-template-columns:1fr}.nav{height:68px}section{padding:75px 0}}
+@media(max-width:900px){.endpoint-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.nav{position:relative}.navlinks.mobile-open{position:absolute;left:0;right:0;top:68px;display:flex;flex-direction:column;gap:0;padding:8px;background:rgba(8,13,18,.98);border:1px solid var(--line);border-radius:0 0 16px 16px;box-shadow:0 22px 45px rgba(0,0,0,.35)}.navlinks.mobile-open a{padding:12px 14px;border-bottom:1px solid var(--line)}.navlinks.mobile-open a:last-child{border-bottom:0}.api-nav{display:none}.endpoint-grid{grid-template-columns:1fr}.wrap{width:min(var(--max),calc(100% - 28px))}.navlinks,.nav-actions .pill{display:none}.menu{display:block}.grid,.grid-2,.roadmap,.statbar{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.stat:last-child{border-bottom:0}.hero h1{font-size:53px}.hero{gap:35px}.cta-box{display:block}.cta-box .btn{margin-top:25px}.foot{grid-template-columns:1fr}.nav{height:68px}section{padding:75px 0}}
 
 .investor-snapshot{border:1px solid rgba(143,255,193,.20);border-radius:24px;background:linear-gradient(145deg,rgba(12,24,20,.92),rgba(8,12,18,.98));padding:28px;margin-top:28px;box-shadow:0 24px 80px rgba(0,0,0,.24)}
 .investor-top{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:20px}.investor-top h2{font-size:34px;margin:5px 0}.investor-top p{color:var(--muted);margin:0;max-width:720px}.investor-badge{color:var(--mint);font:900 10px ui-monospace,monospace;letter-spacing:.12em}
@@ -123,6 +126,9 @@ footer{border-top:1px solid var(--line);padding:45px 0 60px;color:var(--muted)}.
 @media(max-width:1000px){.investor-cards,.buyer-grid{grid-template-columns:repeat(2,1fr)}.proof-strip{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:700px){.investor-top{display:block}.investor-top h2{font-size:28px}.investor-cards,.buyer-grid,.proof-strip{grid-template-columns:1fr 1fr}.investor-snapshot{padding:20px}.proof-strip{grid-template-columns:1fr 1fr}}
 
+.why-now{margin-top:14px;border:1px solid var(--line);border-radius:18px;padding:18px 20px;background:rgba(143,255,193,.025);display:grid;grid-template-columns:.7fr 1.3fr;gap:22px;align-items:center}.why-now span{display:block;color:var(--mint);font:900 10px ui-monospace,monospace;letter-spacing:.14em;margin-bottom:7px}.why-now b{font-size:16px}.why-now p{margin:0;color:var(--muted);font-size:13px;line-height:1.65}
+@media(max-width:700px){.why-now{grid-template-columns:1fr;gap:10px}.investor-cards,.buyer-grid{grid-template-columns:1fr}.proof-strip{grid-template-columns:1fr 1fr}.investor-top p{margin-top:8px}}
+
 </style>
 </head>
 <body>
@@ -130,9 +136,9 @@ footer{border-top:1px solid var(--line);padding:45px 0 60px;color:var(--muted)}.
 <div class="wrap nav">
 <a class="logo" href="#top"><span class="logo-mark"></span>DERVIQ</a>
 <nav class="navlinks">
-<a href="#investor">Investor view</a><a href="#demo">Live proof</a><a href="#buyers">Who buys</a><a href="#controls">12 controls</a><a href="#architecture">Architecture</a><a href="#roadmap">Roadmap</a>
+<a href="#investor">Investor view</a><a href="#demo">Live proof</a><a href="#buyers">Who buys</a><a href="#controls">12 controls</a><a href="#architecture">Architecture</a><a href="#api" aria-label="Developer API surface">API</a><a href="#roadmap">Roadmap</a>
 </nav>
-<div class="nav-actions"><span class="pill">AI CONTROL INFRASTRUCTURE</span><a class="btn btn-primary" href="#demo">Run live proof →</a><button class="menu" onclick="document.querySelector('.navlinks').classList.toggle('mobile-open')">☰</button></div>
+<div class="nav-actions"><span class="pill">AI CONTROL INFRASTRUCTURE</span><a class="btn btn-ghost api-nav" href="/docs" target="_blank" rel="noopener">API Docs ↗</a><a class="btn btn-primary" href="#demo">Run live proof →</a><button class="menu" id="menuButton" aria-label="Open navigation" aria-expanded="false" onclick="toggleMenu()">☰</button></div>
 </div>
 </header>
 <main id="top">
@@ -176,14 +182,6 @@ footer{border-top:1px solid var(--line);padding:45px 0 60px;color:var(--muted)}.
 
 
 
-<section class="cta">
-<div class="wrap">
-<div class="cta-box reveal">
-<div><div class="kicker">12 / The next step</div><h2 style="margin-bottom:8px">Turn AI authority into an explicit system boundary.</h2><p style="color:var(--muted);max-width:700px;margin:0">Derviq Gateway starts with one principle: an AI action should pass through a trust layer before it becomes a real side effect.</p></div>
-<a class="btn btn-primary" href="#demo">Inspect the gateway →</a>
-</div>
-</div>
-</section>
 <section id="investor" style="padding-top:55px;border-top:0">
 <div class="wrap">
 <div class="investor-snapshot reveal">
@@ -197,7 +195,9 @@ footer{border-top:1px solid var(--line);padding:45px 0 60px;color:var(--muted)}.
 <div class="proof-strip">
 <div class="proof-chip"><b>Identity</b><span>agent registration + authority</span></div><div class="proof-chip"><b>Policy</b><span>context + risk decision</span></div><div class="proof-chip"><b>Approval</b><span>human escalation path</span></div><div class="proof-chip"><b>Execution</b><span>bounded action path</span></div><div class="proof-chip"><b>Evidence</b><span>hash-linked verification</span></div>
 </div>
+<div class="why-now reveal"><div><span>WHY NOW</span><b>Agents are moving from answers to actions.</b></div><p>As software agents gain access to tools, APIs and write-capable workflows, bounded authority becomes a product requirement. Derviq is focused on that control boundary.</p></div>
 </div>
+<div class="why-now reveal"><div><span>WHY NOW</span><b>Agents are moving from answers to actions.</b></div><p>As software agents gain access to tools, APIs and write-capable workflows, bounded authority becomes a product requirement. Derviq is focused on that control boundary.</p></div>
 </div>
 </section><section id="demo">
 <div class="wrap">
@@ -348,6 +348,17 @@ currentHash = SHA256(
 <div class="card reveal"><div class="num">AUTH</div><h3>Identity or policy rejected</h3><p>Authentication, identity, authority and policy checks can reject an unsafe request.</p></div>
 <div class="card reveal"><div class="num">EVIDENCE</div><h3>Verify the evidence chain</h3><p>Use the evidence verification endpoint to check hash continuity and record integrity.</p></div>
 </div>
+<div class="api-links reveal"><a class="btn btn-primary" href="/docs" target="_blank" rel="noopener">Open interactive API Docs ↗</a><a class="btn btn-ghost" href="/openapi.json" target="_blank" rel="noopener">OpenAPI JSON ↗</a><a class="btn btn-ghost" href="#demo">Run live proof →</a></div>
+<div class="endpoint-grid">
+<div class="endpoint-card reveal"><code>ENFORCEMENT · /proxy/forward</code><p>Allowlisted HTTP forwarding through the policy enforcement boundary for GET, POST, PUT, PATCH, DELETE, HEAD and OPTIONS.</p></div>
+<div class="endpoint-card reveal"><code>CONTROL · /identities · /delegations · /policies</code><p>Register agents, define delegation relationships and attach policy rules to an agent.</p></div>
+<div class="endpoint-card reveal"><code>LIFECYCLE · /identities/{agent_id}/kill · /degrade · /lineage</code><p>Inspect authority lineage and move an agent into a killed or degraded operating state.</p></div>
+<div class="endpoint-card reveal"><code>DECISION · /evaluate · /intent/verify</code><p>Evaluate an action against identity, authority and policy before execution.</p></div>
+<div class="endpoint-card reveal"><code>EVIDENCE · /evidence · /evidence/verify</code><p>Create structured evidence records and verify the current tamper-evident hash chain.</p></div>
+<div class="endpoint-card reveal"><code>RECOVERY · /recovery</code><p>Trigger a defined compensation path where an allowlisted recovery target exists.</p></div>
+<div class="endpoint-card reveal"><code>DISPUTES · /disputes</code><p>Create a structured dispute record for cross-organization action review.</p></div>
+</div>
+<p class="api-note reveal">Interactive API Docs are the raw developer surface; the OpenAPI JSON is available directly beside them. Current deployment limitations and infrastructure dependencies remain disclosed on this page; universal rollback, WORM storage and real financial settlement are not claimed.</p>
 </div>
 </section><section id="use-cases">
 <div class="wrap">
@@ -416,27 +427,37 @@ currentHash = SHA256(
 
 <details class="reveal"><summary>Who is the initial buyer?</summary><p>Teams already deploying action-capable agents: agent platforms, enterprise AI teams, SaaS automation products and sensitive operational workflows. The next proof is willingness to pay in design-partner deployments.</p></details><details class="reveal"><summary>Does the public demo move real money?</summary><p>No. The public console evaluates control decisions and evidence paths; it does not perform real financial settlement.</p></details><details class="reveal"><summary>Is the evidence chain immutable?</summary><p>The current mechanism is a tamper-evident SHA-256 hash chain. True WORM storage or hardware/KMS-backed custody would require additional infrastructure.</p></details><details class="reveal"><summary>Can Derviq roll back any agent action?</summary><p>No. Recovery is supported where a defined compensation path exists. Universal rollback across arbitrary external systems is not claimed.</p></details><details class="reveal"><summary>What proves the next stage?</summary><p>Real design partners, measurable blocked-risk events, approval behavior, reliability metrics, integration depth and repeat usage.</p></details></div>
 </div>
-</section></main>
+</section><section class="cta">
+<div class="wrap">
+<div class="cta-box reveal">
+<div><div class="kicker">12 / The next step</div><h2 style="margin-bottom:8px">Turn AI authority into an explicit system boundary.</h2><p style="color:var(--muted);max-width:700px;margin:0">Derviq Gateway starts with one principle: an AI action should pass through a trust layer before it becomes a real side effect.</p></div>
+<a class="btn btn-primary" href="#demo">Inspect the gateway →</a>
+</div>
+</div>
+</section>
+</main>
 <footer>
 <div class="wrap">
 <div class="foot">
-<div><a class="logo" href="#top"><span class="logo-mark"></span>DERVIQ</a><p>Company: DerviqProduct: Derviq Control PlaneControl plane: Derviq</p></div>
-<div><b>Explore</b><a href="#product">Product</a><a href="#architecture">Architecture</a><a href="#security">Security</a><a href="#demo">Demo</a></div>
+<div><a class="logo" href="#top"><span class="logo-mark"></span>DERVIQ</a><p>Independent AI control infrastructure.<br/>Policy-driven · Evidence-first · Cross-vendor</p></div>
+<div><b>Explore</b><a href="#product">Product</a><a href="#architecture">Architecture</a><a href="#security">Security</a><a href="#demo">Demo</a><a href="#api">Developer surface</a><a href="/docs" target="_blank" rel="noopener">API Docs (Swagger) ↗</a></div>
 <div><b>Company</b><a href="#founder">Founder</a><a href="#business">Company lens</a><a href="#roadmap">Roadmap</a><a href="#faq">FAQ</a></div>
 <div><b>Principles</b><a href="#security">Fail closed</a><a href="#architecture">Bounded authority</a><a href="#security">Evidence</a><a href="#product">Infrastructure first</a></div>
 </div>
-<div class="fine">© <span id="year"></span> Derviq. Current control capabilities and infrastructure dependencies are disclosed on this page. “The control plane for AI agent actions.”</div>
+<div class="fine">© <span id="year"></span> Derviq. Current control capabilities and infrastructure dependencies are disclosed on this page. “Control before consequence.”</div>
 </div>
 </footer>
 <div class="toast" id="toast"></div>
 <script>
+function toggleMenu(){const n=document.querySelector('.navlinks'),b=document.getElementById('menuButton');const open=n.classList.toggle('mobile-open');b.setAttribute('aria-expanded',String(open));b.setAttribute('aria-label',open?'Close navigation':'Open navigation')}
+document.addEventListener('click',e=>{const link=e.target.closest('.navlinks a');if(!link)return;const n=document.querySelector('.navlinks'),b=document.getElementById('menuButton');n.classList.remove('mobile-open');b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Open navigation')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){const n=document.querySelector('.navlinks'),b=document.getElementById('menuButton');n.classList.remove('mobile-open');b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Open navigation')}});
 const $=s=>document.querySelector(s);
 function toast(msg){const t=$("#toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2600)}
 function setResult(data,code){$("#result").textContent=JSON.stringify(data,null,2);$("#resultStatus").textContent=code?String(code):"READY";$("#resultStatus").style.color=code&&code>=400?"var(--red)":"var(--mint)"}
 function newNonce(){return "DERVIQ_"+Date.now()+"_"+Math.random().toString(36).slice(2,9)}
 $("#nonce").value=newNonce();
-const savedKey=localStorage.getItem("derviq_api_key"); if(savedKey) $("#apiKey").value=savedKey;
-$("#apiKey").addEventListener("change",()=>localStorage.setItem("derviq_api_key",$("#apiKey").value));
+try{const savedKey=localStorage.getItem("derviq_api_key"); if(savedKey) $("#apiKey").value=savedKey; $("#apiKey").addEventListener("change",()=>localStorage.setItem("derviq_api_key",$("#apiKey").value))}catch{ /* storage may be unavailable; the demo still works with a manually entered key */ }
 $("#demoForm").addEventListener("submit",async e=>{
  e.preventDefault();
  const body={agent_id:$("#agentId").value.trim(),action:$("#action").value,amount:Number($("#amount").value),context:{source:"public-demo"}};
