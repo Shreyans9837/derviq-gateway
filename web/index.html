@@ -1,50 +1,459 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#05070c"><meta name="description" content="Derviq — Independent AI Agent Control Plane"><title>DERVIQ — Control AI Action</title><style>
-:root{--bg:#05070c;--p:#0b111b;--p2:#101925;--t:#f5f8fc;--m:#91a0b3;--l:#202c3b;--c:#61e8ff;--g:#65f2bd;--b:#75a8ff;--max:1240px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 85% 0,#18345755,transparent 32rem),radial-gradient(circle at 0 20%,#0d596633,transparent 28rem),var(--bg);color:var(--t);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 36px));margin:auto}nav{position:sticky;top:0;z-index:9;background:#05070cdd;backdrop-filter:blur(18px);border-bottom:1px solid #ffffff0b}.nav{height:68px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900;letter-spacing:.18em}.links{display:flex;gap:20px;color:var(--m);font-size:12px}.links a:hover{color:#fff}.btn{display:inline-flex;padding:11px 16px;border:1px solid #2a3a4c;border-radius:11px;background:#0a1018;cursor:pointer;gap:8px;align-items:center;justify-content:center}.primary{background:linear-gradient(135deg,#eaffff,#a9ffd9);color:#061017;border:0;font-weight:900}.hero{padding:115px 0 100px;min-height:800px;display:grid;align-items:center}.heroGrid{display:grid;grid-template-columns:1.08fr .92fr;gap:65px;align-items:center}.ey{font-size:11px;color:var(--c);font-weight:900;letter-spacing:.18em;text-transform:uppercase}h1{font-size:clamp(50px,7.5vw,94px);line-height:.96;letter-spacing:-.06em;margin:18px 0 26px}h1 span{color:var(--g)}h2{font-size:clamp(34px,4.5vw,60px);line-height:1.03;letter-spacing:-.045em;margin:10px 0 20px}h3{line-height:1.15}.lead{color:#b7c3d1;font-size:18px;max-width:820px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0}.micro{color:#68788b;font-size:10px;letter-spacing:.13em}.panel,.card,.console,.quote,.step,.timeline{background:linear-gradient(145deg,#111a28e8,#080d14e8);border:1px solid var(--l);border-radius:22px;box-shadow:0 28px 90px #0004}.panel{padding:18px}.window{background:#05080d;border:1px solid #1e2a38;border-radius:15px;overflow:hidden}.bar{height:42px;padding:0 13px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #182330;color:#728298;font-size:11px}.live{color:var(--g);font-weight:900}.flow{padding:18px}.node{padding:14px;border:1px solid #273547;border-radius:11px;background:#0a1018}.node b{display:block}.node small{color:#718095}.arrow{text-align:center;color:#4b637b;padding:5px}.hash{font:11px ui-monospace,monospace;color:#7ce8ee;border:1px dashed #2a5362;padding:11px;border-radius:9px;margin-top:12px}section{padding:105px 0;border-top:1px solid #ffffff08}.head{max-width:900px;margin-bottom:44px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.card{padding:26px}.card p,.step p,.timeline p,.faq p{color:var(--m)}.num{font-size:10px;color:var(--c);font-weight:900;letter-spacing:.15em}.icon{font-size:27px;color:var(--g)}.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--l);border-radius:18px;overflow:hidden;margin-top:18px}.stat{padding:23px;border-right:1px solid var(--l)}.stat:last-child{border:0}.stat strong{font-size:28px;display:block}.stat span{color:var(--m);font-size:11px}.mega{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--l);border:1px solid var(--l);border-radius:18px;overflow:hidden}.mega div{background:#080e16;padding:24px;min-height:180px}.mega b{font-size:11px;color:var(--c)}.mega p{color:var(--m);font-size:13px}.steps{display:grid;gap:12px}.step{display:grid;grid-template-columns:65px 1fr;padding:27px;gap:18px}.stepNo{font-size:34px;color:var(--g);font-weight:900}.arch{display:grid;grid-template-columns:1fr 1fr;gap:20px}.flowList{display:grid;gap:9px}.flowItem{display:grid;grid-template-columns:45px 1fr auto;gap:12px;align-items:center;border:1px solid var(--l);border-radius:13px;background:#080e16;padding:15px}.badge{border:1px solid #2b465a;color:#86cbd8;border-radius:99px;padding:4px 8px;font-size:9px}.orbit{min-height:500px;display:grid;place-items:center}.orb{width:320px;height:320px;border:1px dashed #315066;border-radius:50%;display:grid;place-items:center;position:relative}.core{width:115px;height:115px;border-radius:30px;background:linear-gradient(135deg,#e8ffff,#78ffca);color:#061017;display:grid;place-items:center;text-align:center;font-weight:900;z-index:2}.orb label{position:absolute;color:#8294a8;font-size:10px;text-transform:uppercase;letter-spacing:.12em}.a{top:20px}.b{right:0;top:110px}.c{right:35px;bottom:30px}.d{left:30px;bottom:30px}.e{left:0;top:110px}.code{background:#04070b;border:1px solid #1d2c3b;border-radius:16px;overflow:auto}.codebar{padding:11px 15px;border-bottom:1px solid #182330;color:#718095;font-size:11px}.code pre{margin:0;padding:20px;color:#bfeaf1;font:12px/1.7 ui-monospace,monospace}.quote{padding:34px;font-size:24px;line-height:1.45}.quote small{display:block;color:#6f7f91;font-size:11px;margin-top:16px}.founder{display:grid;grid-template-columns:.65fr 1.35fr;gap:20px}.founderCard{text-align:center}.avatar{width:120px;height:120px;border-radius:50%;display:grid;place-items:center;margin:0 auto 20px;background:linear-gradient(135deg,#eaffff,#72ffc8);color:#061017;font-size:45px;font-weight:900}.name{font-size:31px;font-weight:900}.age{color:var(--c);font-size:11px;letter-spacing:.15em}.pill{display:inline-block;border:1px solid #294154;border-radius:99px;padding:5px 9px;font-size:9px;color:#8ca1b5;margin:3px}.timeline{padding:25px;display:grid;gap:1px}.tl{display:grid;grid-template-columns:160px 1fr;padding:25px 0;border-bottom:1px solid var(--l)}.tl:last-child{border:0}.year{color:var(--g);font-weight:900;font-size:12px}.table{border:1px solid var(--l);border-radius:17px;overflow:hidden}.row{display:grid;grid-template-columns:1fr 2fr;border-bottom:1px solid var(--l)}.row:last-child{border:0}.row>div{padding:17px}.row>div:first-child{background:#080e16;font-weight:800}.row p{margin:0;color:var(--m)}.faq details{padding:20px 0;border-bottom:1px solid var(--l)}summary{cursor:pointer;font-weight:800}.console{padding:24px}.consoleGrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:18px}.form{display:grid;gap:8px}.form label{font-size:10px;color:#8392a4;letter-spacing:.1em;text-transform:uppercase}.form input,.form select{padding:12px;border:1px solid #2b3a4d;border-radius:10px;background:#070c12;color:white}.result{background:#04070b;border:1px solid #1d2c3b;border-radius:14px;min-height:370px}.resultHead{padding:12px 15px;border-bottom:1px solid #182330;display:flex;justify-content:space-between}.result pre{padding:18px;margin:0;white-space:pre-wrap;color:#bfeaf1;font:12px/1.7 ui-monospace,monospace}.cta{text-align:center;padding:120px 0}.cta p{max-width:760px;margin:auto;color:var(--m)}footer{border-top:1px solid var(--l);padding:50px 0;color:#718095}.foot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:25px}.foot b{color:#cdd7e2}.foot a{display:block;font-size:12px;margin:7px 0}.reveal{opacity:0;transform:translateY(18px);transition:.6s}.reveal.in{opacity:1;transform:none}.toast{position:fixed;right:18px;bottom:18px;background:#eaffff;color:#061017;padding:12px 15px;border-radius:11px;font-weight:800;transform:translateY(100px);transition:.2s;z-index:20}.toast.show{transform:none}@media(max-width:900px){.links{display:none}.heroGrid,.arch,.founder,.consoleGrid{grid-template-columns:1fr}.grid,.usecases{grid-template-columns:1fr 1fr}.mega{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.foot{grid-template-columns:1fr 1fr}}@media(max-width:600px){.wrap{width:calc(100% - 24px)}.hero{padding:75px 0}.grid,.grid2,.mega,.stats,.foot{grid-template-columns:1fr}.row,.tl{grid-template-columns:1fr}.row>div:first-child{border-bottom:1px solid var(--l)}section{padding:75px 0}}
-</style></head><body>
-<nav><div class="wrap nav"><a class="brand" href="#top">◆ DERVIQ</a><div class="links"><a href="#product">Product</a><a href="#how">How it works</a><a href="#use">Use cases</a><a href="#founder">Founder</a><a href="#roadmap">Roadmap</a><a href="#faq">FAQ</a></div><a class="btn primary" href="#console">Open Console →</a></div></nav>
-<main id="top">
-<section class="hero"><div class="wrap heroGrid"><div><div class="ey">Independent AI Agent Control Plane</div><h1>AI can <span>act.</span><br>Derviq controls how.</h1><p class="lead">Derviq is building the control layer between autonomous AI agents and the systems they can affect — identity, authority, policy, execution, evidence and recovery.</p><div class="actions"><a class="btn primary" href="#product">Explore Derviq ↓</a><a class="btn" href="#console">Run live control surface</a></div><div class="micro">CROSS-VENDOR · CROSS-CLOUD · FRAMEWORK-AGNOSTIC · CONTROL BEFORE SIDE EFFECT</div></div><div class="panel"><div class="window"><div class="bar"><span>DERVIQ CONTROL PLANE</span><span id="heroStatus" class="live">CHECKING</span></div><div class="flow"><div class="node"><b>01 · Agent intent</b><small>What does the machine want to do?</small></div><div class="arrow">↓</div><div class="node"><b>02 · Identity + authority</b><small>Who is acting and who delegated power?</small></div><div class="arrow">↓</div><div class="node"><b>03 · Risk + policy</b><small>Is this request inside the allowed boundary?</small></div><div class="arrow">↓</div><div class="node"><b>04 · Execution boundary</b><small>Which external system may receive the action?</small></div><div class="arrow">↓</div><div class="node"><b>05 · Evidence + recovery</b><small>Can the action be verified and compensated?</small></div><div class="hash">SHA-256 evidence chain · fail-closed controls · PostgreSQL-backed state</div></div></div></div></div></section>
-<section id="product"><div class="wrap"><div class="head"><div class="ey">01 / Product thesis</div><h2>The missing boundary in the agent era.</h2><p class="lead">AI is moving from answering questions to taking actions. The control problem starts when a model decision becomes a real-world side effect.</p></div><div class="grid"><div class="card"><div class="icon">◎</div><div class="num">IDENTITY</div><h3>Know the machine actor</h3><p>Explicit agent identity gives a control plane something concrete to authorize, monitor and disable.</p></div><div class="card"><div class="icon">◇</div><div class="num">AUTHORITY</div><h3>Separate intent from permission</h3><p>An agent can request an action without automatically inheriting unlimited authority.</p></div><div class="card"><div class="icon">⌁</div><div class="num">POLICY</div><h3>Rules before side effects</h3><p>Risk, amount, action and context can be evaluated before execution.</p></div><div class="card"><div class="icon">→</div><div class="num">EXECUTION</div><h3>Control the boundary</h3><p>External calls should pass through an explicit execution surface rather than invisible credentials.</p></div><div class="card"><div class="icon">#</div><div class="num">EVIDENCE</div><h3>Make action inspectable</h3><p>Evidence records create a machine-readable history of what happened and how the chain relates.</p></div><div class="card"><div class="icon">↺</div><div class="num">RECOVERY</div><h3>Design for failure</h3><p>Kill controls, degraded execution and workflow-specific compensation address the reality that systems fail.</p></div></div><div class="stats"><div class="stat"><strong>12</strong><span>core control capabilities</span></div><div class="stat"><strong>1</strong><span>control boundary between intent and action</span></div><div class="stat"><strong>SHA-256</strong><span>current evidence-chain primitive</span></div><div class="stat"><strong>PostgreSQL</strong><span>current durable state layer</span></div></div></div></section>
-<section id="controls"><div class="wrap"><div class="head"><div class="ey">02 / Twelve controls</div><h2>A vocabulary for machine authority.</h2><p class="lead">Derviq's thesis is intentionally broader than API authentication. It covers the lifecycle of an AI agent's authority.</p></div><div class="mega"><div><b>01 · IDENTITY</b><p>Cross-vendor agent identity registry.</p></div><div><b>02 · DELEGATION</b><p>Hierarchical authority and lineage.</p></div><div><b>03 · RISK</b><p>Dynamic context-aware risk and policy.</p></div><div><b>04 · GUARDRAILS</b><p>Spend and resource limits.</p></div><div><b>05 · ESCALATION</b><p>Human approval for exceptions.</p></div><div><b>06 · HARD KILL</b><p>Degraded mode and emergency stop.</p></div><div><b>07 · DISCOVERY</b><p>Shadow-agent and tool discovery.</p></div><div><b>08 · PROOF</b><p>Cryptographic execution evidence.</p></div><div><b>09 · NON-REPUDIATION</b><p>Durable cross-vendor evidence.</p></div><div><b>10 · INTENT</b><p>Intent and authority verification.</p></div><div><b>11 · RECOVERY</b><p>Compensating state recovery.</p></div><div><b>12 · DISPUTES</b><p>Cross-organization machine disputes.</p></div></div></div></section>
-<section id="how"><div class="wrap"><div class="head"><div class="ey">03 / Complete tutorial</div><h2>How Derviq works, step by step.</h2><p class="lead"><b>Intent → Identity → Authority → Risk → Policy → Approval → Execution → Evidence → Recovery.</b></p></div><div class="steps"><div class="step"><div class="stepNo">01</div><div><h3>Agent creates an intent</h3><p>The model decides it wants to call a tool, write data, change a record or trigger a workflow.</p></div></div><div class="step"><div class="stepNo">02</div><div><h3>Derviq identifies the actor</h3><p>The request is associated with an explicit machine identity instead of treating every request as anonymous application traffic.</p></div></div><div class="step"><div class="stepNo">03</div><div><h3>Delegation is checked</h3><p>The system can represent which principal granted the agent its authority and inspect its permitted scope.</p></div></div><div class="step"><div class="stepNo">04</div><div><h3>Context enters the decision</h3><p>Agent, target, action, amount, risk context and other request attributes can affect the decision.</p></div></div><div class="step"><div class="stepNo">05</div><div><h3>Policy decides</h3><p>The request can be allowed, denied, degraded or escalated before the side effect.</p></div></div><div class="step"><div class="stepNo">06</div><div><h3>Human approval can be an exception path</h3><p>Higher-risk actions can require explicit approval while routine actions remain automated.</p></div></div><div class="step"><div class="stepNo">07</div><div><h3>Execution crosses a controlled boundary</h3><p>Only the permitted action reaches the registered execution or upstream integration.</p></div></div><div class="step"><div class="stepNo">08</div><div><h3>Evidence is committed</h3><p>The current engine creates SHA-256 hash-linked evidence records that can be verified for continuity.</p></div></div><div class="step"><div class="stepNo">09</div><div><h3>Recovery is explicit</h3><p>Supported workflows can issue compensating actions. Universal rollback is not assumed because external systems differ.</p></div></div></div></div></section>
-<section id="architecture"><div class="wrap"><div class="head"><div class="ey">04 / Architecture</div><h2>One control loop. Multiple enforcement surfaces.</h2><p class="lead">The architecture is designed to remain independent of one model vendor, one cloud or one agent framework.</p></div><div class="arch"><div class="flowList"><div class="flowItem"><b>01</b><span><b>Agent Identity Registry</b><br><small>Who is acting?</small></span><i class="badge">IDENTITY</i></div><div class="flowItem"><b>02</b><span><b>Delegation Graph</b><br><small>Who granted authority?</small></span><i class="badge">AUTHORITY</i></div><div class="flowItem"><b>03</b><span><b>Risk + Policy Engine</b><br><small>Is the operation permitted?</small></span><i class="badge">DECISION</i></div><div class="flowItem"><b>04</b><span><b>Resource Guardrails</b><br><small>Does scope exceed a limit?</small></span><i class="badge">LIMIT</i></div><div class="flowItem"><b>05</b><span><b>Human Escalation</b><br><small>Does an exception need approval?</small></span><i class="badge">HITL</i></div><div class="flowItem"><b>06</b><span><b>Execution Boundary</b><br><small>Which adapter may act?</small></span><i class="badge">ACT</i></div><div class="flowItem"><b>07</b><span><b>Evidence Graph</b><br><small>What exactly happened?</small></span><i class="badge">PROOF</i></div><div class="flowItem"><b>08</b><span><b>Recovery / Dispute</b><br><small>What if it must be challenged?</small></span><i class="badge">RECOVER</i></div></div><div class="panel orbit"><div class="orb"><div class="core">DERVIQ<br>CONTROL<br>PLANE</div><label class="a">Identity</label><label class="b">Risk</label><label class="c">Execution</label><label class="d">Evidence</label><label class="e">Recovery</label></div></div></div></div></section>
-<section id="use"><div class="wrap"><div class="head"><div class="ey">05 / Everyday life</div><h2>What could Derviq eventually do for normal people?</h2><p class="lead">The consumer direction is not “another chatbot.” It is a controlled operator that can prepare, verify and — after appropriate approval — execute digital work.</p></div><div class="grid"><div class="card"><div class="num">PERSONAL ADMIN</div><h3>Cancel subscriptions</h3><p>Find the account, prepare the cancellation, verify the target and execute only after the user approves the final action.</p></div><div class="card"><div class="num">DISPUTES</div><h3>Wrong-charge workflows</h3><p>Collect transaction information, prepare the right dispute workflow and maintain an evidence trail.</p></div><div class="card"><div class="num">DOCUMENTS</div><h3>Documents → action plan</h3><p>Turn messy PDFs and notices into structured tasks, deadlines and prepared next actions.</p></div><div class="card"><div class="num">TRAVEL</div><h3>Travel administration</h3><p>Organize confirmations and documents into a controlled workflow with clear approval points.</p></div><div class="card"><div class="num">FREELANCE</div><h3>Invoice follow-ups</h3><p>Prepare follow-ups, track responses and escalate according to a user-approved workflow.</p></div><div class="card"><div class="num">DIGITAL LIFE</div><h3>Personal digital operator</h3><p>A common execution engine could support many repetitive digital tasks without giving AI unlimited authority.</p></div></div><div class="quote" style="margin-top:18px">“Kaam bolo. Result lo.”<small>The consumer-facing simplicity sits on top of a much stricter execution and authorization system.</small></div></div></section>
-<section id="enterprise"><div class="wrap"><div class="head"><div class="ey">06 / Enterprise</div><h2>Why large organizations need machine-authority infrastructure.</h2><p class="lead">As agent fleets grow, governance becomes a systems problem: many models, many tools, many credentials, many organizations and many consequences.</p></div><div class="grid"><div class="card"><div class="num">FLEET</div><h3>Hundreds of agents</h3><p>Give teams a shared identity and authority vocabulary instead of bespoke rules inside every agent.</p></div><div class="card"><div class="num">VENDOR</div><h3>Multiple AI providers</h3><p>Keep governance independent of a single model provider.</p></div><div class="card"><div class="num">CLOUD</div><h3>Multiple environments</h3><p>Connect controls across SaaS, cloud and internal systems.</p></div><div class="card"><div class="num">RISK</div><h3>Different consequences</h3><p>Reading data and modifying financial records should not require the same authority.</p></div><div class="card"><div class="num">AUDIT</div><h3>Explain what happened</h3><p>Operators need structured records of identity, decision context and outcome.</p></div><div class="card"><div class="num">RECOVERY</div><h3>Failure is normal</h3><p>Degraded execution, kill controls and workflow-specific compensation are part of reliable automation.</p></div></div></div></section>
-<section id="example"><div class="wrap"><div class="head"><div class="ey">07 / Worked example</div><h2>An agent wants to issue a ₹50,000 payment.</h2><p class="lead">Illustrative only. The current Derviq demo does not move real money.</p></div><div class="grid2"><div class="card"><div class="num">WITHOUT A CONTROL PLANE</div><h3>Agent → credential → system</h3><p>An application can accidentally give an agent broader credentials than the task requires. The model then becomes part of the security boundary.</p></div><div class="card"><div class="num">WITH DERVIQ'S MODEL</div><h3>Intent → authority → policy → approval → action → evidence</h3><p>The payment intent can be evaluated against identity, delegation, amount, recipient and policy before an adapter is allowed to act.</p></div></div><div class="code" style="margin-top:18px"><div class="codebar">Illustrative controlled intent</div><pre>{
-  "agent": "finance-agent-07",
-  "action": "payment.create",
-  "amount": 50000,
-  "currency": "INR",
-  "recipient": "approved-vendor"
-}
+<!DOCTYPE html>
 
-DERVIQ
-→ identify agent
-→ verify delegated authority
-→ calculate risk
-→ evaluate policy
-→ check amount guardrail
-→ escalate if required
-→ execute through approved adapter
-→ commit evidence
-→ expose recovery path</pre></div></div></section>
-<section id="developer"><div class="wrap"><div class="head"><div class="ey">08 / Developer surface</div><h2>Simple at the edge. Strict underneath.</h2><p class="lead">The integration goal is straightforward: send an intent, receive a control decision, and preserve evidence.</p></div><div class="code"><div class="codebar">POST /evaluate · authenticated control endpoint</div><pre>curl -X POST https://YOUR-DERVIQ-HOST/evaluate \
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Derviq — The trust layer between AI and action.</title>
+<meta content="Derviq Gateway is an AI action verification and policy enforcement gateway. Identity, authorization, policy, replay protection, controlled execution and cryptographic audit in one trust layer." name="description"/>
+<meta content="#07090d" name="theme-color"/>
+<style>
+:root{
+  --bg:#05070a;--bg2:#080d12;--panel:#0b1118;--panel2:#0e161f;--line:#1a2633;
+  --text:#f4f7fb;--muted:#91a0b2;--soft:#c8d2de;--mint:#8fffc1;--blue:#79a7ff;
+  --yellow:#f4d58a;--red:#ff8e8e;--max:1240px;--radius:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:
+radial-gradient(900px 500px at 80% -10%,rgba(143,255,193,.11),transparent 60%),
+radial-gradient(700px 500px at 10% 20%,rgba(121,167,255,.08),transparent 60%),var(--bg);
+color:var(--text);font:15px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,#000,transparent 85%)}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:relative;z-index:20}
+.logo{display:flex;align-items:center;gap:10px;font-weight:950;letter-spacing:.16em;font-size:18px}
+.logo-mark{width:29px;height:29px;border:1px solid rgba(143,255,193,.55);border-radius:9px;display:grid;place-items:center;background:rgba(143,255,193,.07);box-shadow:0 0 30px rgba(143,255,193,.08)}
+.logo-mark:after{content:"";width:9px;height:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 18px var(--mint)}
+.navlinks{display:flex;gap:24px;color:var(--muted);font-size:13px}
+.navlinks a:hover{color:var(--text)}
+.nav-actions{display:flex;gap:9px;align-items:center}
+.pill{border:1px solid var(--line);padding:8px 12px;border-radius:999px;color:var(--soft);font-size:12px;background:rgba(255,255,255,.02)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid var(--line);border-radius:12px;padding:12px 17px;font-weight:850;transition:.2s;min-height:44px}
+.btn:hover{transform:translateY(-2px);border-color:#314356}
+.btn-primary{background:var(--mint);color:#06100b;border-color:var(--mint);box-shadow:0 12px 45px rgba(143,255,193,.12)}
+.btn-ghost{background:rgba(255,255,255,.025)}
+.menu{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:9px}
+.hero{padding:115px 0 105px;display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
+.eyebrow{font-size:11px;font-weight:950;letter-spacing:.18em;text-transform:uppercase;color:var(--mint)}
+.hero h1{font-size:clamp(55px,7.5vw,102px);line-height:.91;letter-spacing:-.065em;margin:20px 0 25px;max-width:900px}
+.hero h1 em{font-style:normal;color:var(--mint)}
+.hero-lead{font-size:20px;line-height:1.55;color:var(--muted);max-width:730px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.micro{margin-top:22px;color:#657487;font-size:12px}
+.hero-card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(17,28,26,.88),rgba(9,13,19,.96));border-radius:28px;padding:24px;box-shadow:0 30px 100px rgba(0,0,0,.32)}
+.window-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:15px}
+.dots{display:flex;gap:6px}.dots i{width:7px;height:7px;border-radius:50%;background:#334252}
+.live{display:flex;align-items:center;gap:7px;color:var(--mint);font-size:11px;font-weight:800}.live:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 13px var(--mint)}
+.arch-flow{padding:22px 0 6px;display:grid;gap:8px}
+.arch-node{border:1px solid var(--line);background:rgba(5,8,12,.7);border-radius:13px;padding:13px 15px;display:flex;align-items:center;justify-content:space-between}
+.arch-node small{color:var(--muted)}
+.arch-arrow{text-align:center;color:var(--mint);font-size:12px}
+.hash{font:11px ui-monospace,SFMono-Regular,Menlo,monospace;color:#8193a8;word-break:break-all}
+section{padding:105px 0;border-top:1px solid var(--line)}
+.section-head{max-width:800px;margin-bottom:45px}
+.kicker{color:var(--mint);font-size:11px;font-weight:950;letter-spacing:.18em;text-transform:uppercase}
+h2{font-size:clamp(38px,5vw,65px);letter-spacing:-.045em;line-height:1.02;margin:10px 0 18px}
+h3{font-size:20px;letter-spacing:-.02em;margin:8px 0}
+.lead{font-size:18px;color:var(--muted);max-width:800px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.card{background:linear-gradient(145deg,rgba(12,18,25,.94),rgba(8,12,17,.94));border:1px solid var(--line);border-radius:var(--radius);padding:25px;position:relative;overflow:hidden}
+.card:after{content:"";position:absolute;width:160px;height:160px;right:-100px;top:-100px;background:rgba(143,255,193,.06);border-radius:50%;filter:blur(10px)}
+.card p{color:var(--muted);margin:7px 0 0}
+.num{color:var(--mint);font:800 11px ui-monospace,monospace;letter-spacing:.1em}
+.icon{width:42px;height:42px;border-radius:13px;border:1px solid var(--line);display:grid;place-items:center;margin-bottom:18px;color:var(--mint);background:rgba(143,255,193,.045)}
+.icon svg{width:20px;height:20px}
+.statbar{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:28px;background:rgba(255,255,255,.015)}
+.stat{padding:23px;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat strong{display:block;font-size:29px;letter-spacing:-.03em}.stat span{color:var(--muted);font-size:12px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.layers{display:grid;gap:11px}
+.layer{border:1px solid var(--line);border-radius:16px;padding:17px;background:var(--panel);display:grid;grid-template-columns:50px 1fr auto;gap:13px;align-items:center}
+.layer-no{width:38px;height:38px;border-radius:11px;background:rgba(143,255,193,.06);border:1px solid rgba(143,255,193,.18);display:grid;place-items:center;color:var(--mint);font-weight:900}
+.layer p{margin:2px 0 0;color:var(--muted);font-size:13px}.layer b{font-size:15px}.layer code{font-size:10px;color:#6f8092}
+.flow-wide{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:center}
+.flow-box{min-height:130px;border:1px solid var(--line);background:var(--panel);border-radius:17px;padding:17px}
+.flow-box strong{display:block;margin:8px 0}.flow-box p{color:var(--muted);font-size:12px;margin:0}
+.flow-line{color:var(--mint);text-align:center;font-size:22px}
+.code{border:1px solid var(--line);background:#030507;border-radius:18px;overflow:hidden}
+.codebar{display:flex;justify-content:space-between;align-items:center;padding:12px 15px;border-bottom:1px solid var(--line);color:#718096;font-size:11px}
+pre{margin:0;padding:22px;overflow:auto;color:#dce5ef;font:12px/1.75 ui-monospace,SFMono-Regular,Menlo,monospace}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.green{color:var(--mint)}.blue{color:var(--blue)}.yellow{color:var(--yellow)}.red{color:var(--red)}
+.demo{border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,#0b1118,#070a0e);overflow:hidden}
+.demo-head{padding:20px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;align-items:center}
+.demo-body{display:grid;grid-template-columns:.9fr 1.1fr}
+.form{padding:24px;border-right:1px solid var(--line)}
+.result{padding:24px;background:#05080b;min-height:380px}
+label{display:block;color:#9eabba;font-size:12px;font-weight:750;margin:14px 0 7px}
+input,select{width:100%;border:1px solid var(--line);background:#080d12;color:var(--text);border-radius:11px;padding:12px;outline:none}
+input:focus,select:focus{border-color:#3a5269;box-shadow:0 0 0 3px rgba(121,167,255,.07)}
+.form .btn{width:100%;margin-top:17px}
+.result-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.status{padding:5px 9px;border-radius:999px;font-size:10px;font-weight:900;letter-spacing:.08em;border:1px solid var(--line);color:var(--muted)}
+.output{border:1px solid var(--line);border-radius:13px;padding:14px;background:#030507;min-height:280px}
+.output pre{padding:0;max-height:310px}
+.quote{border-left:2px solid var(--mint);padding:4px 0 4px 20px;font-size:20px;color:#dce5ef;max-width:900px}
+.quote small{display:block;color:#728095;font-size:12px;margin-top:13px}
+.founder{display:grid;grid-template-columns:.7fr 1.3fr;gap:50px;align-items:center}
+.founder-card{border:1px solid var(--line);border-radius:24px;background:radial-gradient(circle at 50% 15%,rgba(143,255,193,.1),transparent 35%),var(--panel);padding:30px;text-align:center}
+.avatar{width:145px;height:145px;border-radius:50%;margin:0 auto 22px;border:1px solid rgba(143,255,193,.3);display:grid;place-items:center;background:linear-gradient(145deg,#111d1a,#080c11);font-size:42px;font-weight:950;color:var(--mint);box-shadow:0 20px 70px rgba(143,255,193,.07)}
+.founder-card small{color:var(--muted)}
+.investor-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
+.matrix{border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.row{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}.row:last-child{border:0}.row div{padding:16px;border-right:1px solid var(--line)}.row div:last-child{border:0}.row.head{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em;background:#080d12}
+.roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.phase{padding:24px;background:var(--panel);border-right:1px solid var(--line);min-height:220px}.phase:last-child{border:0}.phase b{display:block;color:var(--mint);font-size:11px;letter-spacing:.13em}.phase h3{margin-top:15px}.phase p{color:var(--muted);font-size:13px}
+.faq{display:grid;gap:10px;max-width:950px}.faq details{border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:18px 20px}.faq summary{cursor:pointer;font-weight:800}.faq p{color:var(--muted);margin:13px 0 0}
+.cta{padding:100px 0}.cta-box{border:1px solid rgba(143,255,193,.2);border-radius:28px;padding:55px;background:radial-gradient(circle at 85% 20%,rgba(143,255,193,.12),transparent 35%),linear-gradient(145deg,#0c1714,#080c11);display:flex;justify-content:space-between;gap:40px;align-items:center}
+footer{border-top:1px solid var(--line);padding:45px 0 60px;color:var(--muted)}.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:30px}.foot b{color:var(--text)}.foot a{display:block;margin-top:8px;font-size:13px}.fine{border-top:1px solid var(--line);margin-top:35px;padding-top:22px;font-size:11px;color:#657487}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}.reveal.in{opacity:1;transform:none}
+.toast{position:fixed;right:20px;bottom:20px;z-index:100;background:#0d151c;border:1px solid #2a3b4c;border-radius:12px;padding:13px 16px;box-shadow:0 20px 60px #0008;display:none}.toast.show{display:block}
+@media(max-width:1000px){.hero,.split,.founder,.investor-grid{grid-template-columns:1fr}.hero{padding-top:80px}.flow-wide{grid-template-columns:1fr}.flow-line{transform:rotate(90deg)}.roadmap{grid-template-columns:1fr 1fr}.demo-body{grid-template-columns:1fr}.form{border-right:0;border-bottom:1px solid var(--line)}.foot{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.wrap{width:min(var(--max),calc(100% - 28px))}.navlinks,.nav-actions .pill{display:none}.menu{display:block}.grid,.grid-2,.roadmap,.statbar{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.stat:last-child{border-bottom:0}.hero h1{font-size:53px}.hero{gap:35px}.cta-box{display:block}.cta-box .btn{margin-top:25px}.foot{grid-template-columns:1fr}.nav{height:68px}section{padding:75px 0}}
+
+.investor-snapshot{border:1px solid rgba(143,255,193,.20);border-radius:24px;background:linear-gradient(145deg,rgba(12,24,20,.92),rgba(8,12,18,.98));padding:28px;margin-top:28px;box-shadow:0 24px 80px rgba(0,0,0,.24)}
+.investor-top{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:20px}.investor-top h2{font-size:34px;margin:5px 0}.investor-top p{color:var(--muted);margin:0;max-width:720px}.investor-badge{color:var(--mint);font:900 10px ui-monospace,monospace;letter-spacing:.12em}
+.investor-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.investor-card{border:1px solid var(--line);border-radius:15px;padding:17px;background:rgba(255,255,255,.018)}.investor-card b{display:block;margin:7px 0}.investor-card span{font-size:12px;color:var(--muted)}
+.buyer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.buyer{border:1px solid var(--line);border-radius:18px;padding:21px;background:var(--panel)}.buyer .num{margin-bottom:8px}.buyer p{color:var(--muted);font-size:13px;margin:7px 0 0}.buyer strong{font-size:17px}
+.core-group{border:1px solid var(--line);border-radius:21px;padding:21px;background:rgba(255,255,255,.012);margin-top:15px}.core-group-title{display:flex;align-items:center;gap:12px;margin-bottom:15px}.core-group-title h3{margin:0}.core-group-title span{font:800 10px ui-monospace,monospace;color:var(--mint);letter-spacing:.12em}
+.proof-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:17px}.proof-chip{border:1px solid var(--line);border-radius:14px;padding:14px;background:#070b10}.proof-chip b{display:block;font-size:12px}.proof-chip span{font-size:10px;color:var(--muted)}
+@media(max-width:1000px){.investor-cards,.buyer-grid{grid-template-columns:repeat(2,1fr)}.proof-strip{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.investor-top{display:block}.investor-top h2{font-size:28px}.investor-cards,.buyer-grid,.proof-strip{grid-template-columns:1fr 1fr}.investor-snapshot{padding:20px}.proof-strip{grid-template-columns:1fr 1fr}}
+
+</style>
+</head>
+<body>
+<header>
+<div class="wrap nav">
+<a class="logo" href="#top"><span class="logo-mark"></span>DERVIQ</a>
+<nav class="navlinks">
+<a href="#investor">Investor view</a><a href="#demo">Live proof</a><a href="#buyers">Who buys</a><a href="#controls">12 controls</a><a href="#architecture">Architecture</a><a href="#roadmap">Roadmap</a>
+</nav>
+<div class="nav-actions"><span class="pill">AI CONTROL INFRASTRUCTURE</span><a class="btn btn-primary" href="#demo">Run live proof →</a><button class="menu" onclick="document.querySelector('.navlinks').classList.toggle('mobile-open')">☰</button></div>
+</div>
+</header>
+<main id="top">
+<section class="hero" style="border-top:0">
+<div class="wrap" style="display:contents">
+<div>
+<div class="eyebrow">Independent · Cross-Vendor · Policy-Driven · Evidence-First</div>
+<h1>AI agents can <em>act.</em><br/>Derviq controls the action.</h1>
+<p class="hero-lead">Derviq is a neutral control plane between agent intent and real execution — defining identity, authority, risk policy, human approval, execution boundaries, evidence and recovery across vendors.</p>
+<div class="hero-actions"><a class="btn btn-primary" href="#demo">Run the live proof →</a><a class="btn btn-ghost" href="#buyers">Who actually needs it?</a></div>
+<div class="micro">MICROSOFT · AWS · GOOGLE CLOUD · SAAS · CUSTOM AGENT FRAMEWORKS</div>
+</div>
+<div class="hero-card">
+<div class="window-top"><div class="dots"><i></i><i></i><i></i></div><div class="live">GATEWAY ONLINE</div></div>
+<div class="arch-flow">
+<div class="arch-node"><span><b>AI Agent</b><br/><small>intent + credentials</small></span><span class="blue">01</span></div>
+<div class="arch-arrow">↓</div>
+<div class="arch-node"><span><b>Identity + Authority</b><br/><small>who is acting / what may it do?</small></span><span class="green">02</span></div>
+<div class="arch-arrow">↓</div>
+<div class="arch-node"><span><b>Risk + Policy</b><br/><small>context + policy decision</small></span><span class="green">03</span></div>
+<div class="arch-arrow">↓</div>
+<div class="arch-node"><span><b>Approval / Control</b><br/><small>allow · escalate · degrade · kill</small></span><span class="green">04</span></div>
+<div class="arch-arrow">↓</div>
+<div class="arch-node"><span><b>Execution + Evidence</b><br/><small>bounded action + verifiable record</small></span><span class="yellow">05</span></div>
+</div>
+<div class="hash">SHA-256 · tamper-evident audit chain</div>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="cta">
+<div class="wrap">
+<div class="cta-box reveal">
+<div><div class="kicker">12 / The next step</div><h2 style="margin-bottom:8px">Turn AI authority into an explicit system boundary.</h2><p style="color:var(--muted);max-width:700px;margin:0">Derviq Gateway starts with one principle: an AI action should pass through a trust layer before it becomes a real side effect.</p></div>
+<a class="btn btn-primary" href="#demo">Inspect the gateway →</a>
+</div>
+</div>
+</section>
+<section id="investor" style="padding-top:55px;border-top:0">
+<div class="wrap">
+<div class="investor-snapshot reveal">
+<div class="investor-top"><div><div class="kicker">Investor view · first 30 seconds</div><h2>What exists. Who needs it. Why it matters.</h2><p>Derviq is building the control plane for agents that can take consequential actions. The near-term proof is a working control surface and real design-partner workflows — not a slide full of future infrastructure.</p></div><div class="investor-badge">WORKING PRODUCT → VALIDATION</div></div>
+<div class="investor-cards">
+<div class="investor-card"><div class="num">01 · PRODUCT</div><b>12-core control model</b><span>Identity, delegation, risk/policy, spend, HITL, kill/degraded execution, discovery, proof, authority, recovery and disputes.</span></div>
+<div class="investor-card"><div class="num">02 · PROOF</div><b>Live API + console</b><span>Run a safe request, inspect the policy decision and verify evidence instead of relying only on diagrams.</span></div>
+<div class="investor-card"><div class="num">03 · BUYER</div><b>Teams deploying action-capable agents</b><span>Agent platforms, enterprise AI teams, SaaS automation and sensitive operational workflows.</span></div>
+<div class="investor-card"><div class="num">04 · NEXT</div><b>Design-partner validation</b><span>Measure reliability, blocked-risk events, approval behavior, integration pull and repeat usage.</span></div>
+</div>
+<div class="proof-strip">
+<div class="proof-chip"><b>Identity</b><span>agent registration + authority</span></div><div class="proof-chip"><b>Policy</b><span>context + risk decision</span></div><div class="proof-chip"><b>Approval</b><span>human escalation path</span></div><div class="proof-chip"><b>Execution</b><span>bounded action path</span></div><div class="proof-chip"><b>Evidence</b><span>hash-linked verification</span></div>
+</div>
+</div>
+</div>
+</section><section id="demo">
+<div class="wrap">
+<div class="section-head reveal"><div class="kicker">Live proof · before theory</div><h2>Run it. See the decision. Verify the evidence.</h2><p class="lead">This console calls the deployed gateway evaluation endpoint. It evaluates policy decisions and can verify evidence; it does not transfer real money or write to production systems.</p></div>
+<div class="demo reveal">
+<div class="demo-head"><div><b>Derviq Gateway Console</b><div style="color:var(--muted);font-size:12px">Derviq Control Engine · deployed control surface</div></div><span class="status" id="healthBadge">CHECKING</span></div>
+<div class="demo-body">
+<form class="form" id="demoForm">
+<label>Agent ID</label><input autocomplete="off" id="agentId" value="AGENT_01"/>
+<label>API key</label><input autocomplete="off" id="apiKey" placeholder="Enter your Derviq API key" value=""/><div style="color:var(--muted);font-size:11px;margin-top:6px">Demo environments may use a configured key. Never publish a production secret in the page.</div>
+<label>Action</label><select id="action"><option value="database.write">database.write</option><option value="payments.transfer">payments.transfer</option></select>
+<label>Amount</label><input id="amount" min="0" type="number" value="10"/>
+<label>Nonce</label><input autocomplete="off" id="nonce"/>
+<button class="btn btn-primary" type="submit">Evaluate policy safely →</button>
+<button class="btn btn-ghost" onclick="verifyLedger()" type="button">Verify audit ledger</button><div style="color:var(--muted);font-size:11px;margin-top:10px">Evaluation only: the public console does not move real money or claim universal rollback.</div>
+</form>
+<div class="result">
+<div class="result-top"><b>Gateway response</b><span class="status" id="resultStatus">WAITING</span></div>
+<div class="output"><pre id="result">{
+  "status": "READY",
+  "message": "Submit a request to inspect the gateway response."
+}</pre></div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="buyers">
+<div class="wrap">
+<div class="section-head reveal"><div class="kicker">Who actually needs Derviq?</div><h2>Sell to the teams where agent actions create real exposure.</h2><p class="lead">The buyer is not “everyone using AI.” The initial wedge is the team that already has agents touching systems, tools, money, data or operational workflows and needs a consistent authority boundary.</p></div>
+<div class="buyer-grid">
+<div class="buyer reveal"><div class="num">01 · AGENT PLATFORMS</div><strong>Orchestration teams</strong><p>Need shared identity, delegation, policy and evidence across many agents and tools.</p></div>
+<div class="buyer reveal"><div class="num">02 · ENTERPRISE AI</div><strong>Internal AI operators</strong><p>Need bounded permissions and human escalation before agents change business systems.</p></div>
+<div class="buyer reveal"><div class="num">03 · SAAS / AUTOMATION</div><strong>Action-capable products</strong><p>Need a common enforcement layer before write-capable APIs and customer workflows.</p></div>
+<div class="buyer reveal"><div class="num">04 · HIGH-RISK WORKFLOWS</div><strong>Finance / ops / security</strong><p>Need approval, exposure limits, evidence and recovery around sensitive actions.</p></div>
+</div>
+<div class="quote reveal" style="margin-top:20px">The commercial question is simple: <b>does an agent action have enough consequence that the customer will pay for a dedicated control boundary?</b><small>That is the question the next design-partner sprint should validate.</small></div>
+</div>
+</section><section id="product">
+<div class="wrap">
+<div class="section-head reveal"><div class="kicker">01 / The product</div><h2>A control plane for AI actions.</h2><p class="lead">AI models produce decisions. Applications produce side effects. Derviq is designed around the boundary between the two.</p></div>
+<div class="grid">
+<div class="card reveal"><div class="icon">◎</div><div class="num">IDENTITY</div><h3>Know which agent is acting</h3><p>Every request enters with an explicit agent identity and credential rather than inheriting unlimited application authority.</p></div>
+<div class="card reveal"><div class="icon">◇</div><div class="num">AUTHORIZATION</div><h3>Allow only named actions</h3><p>Permissions are explicit. A model request is not automatically permission to perform every downstream operation.</p></div>
+<div class="card reveal"><div class="icon">⌁</div><div class="num">POLICY</div><h3>Put boundaries around power</h3><p>Policy can constrain resource usage through machine-enforced limits before an action reaches an adapter.</p></div>
+<div class="card reveal"><div class="icon">↻</div><div class="num">REPLAY</div><h3>Reject duplicate intent</h3><p>Agent-scoped nonces provide a simple replay boundary for the prototype execution path.</p></div>
+<div class="card reveal"><div class="icon">→</div><div class="num">EXECUTION</div><h3>Separate approval from side effects</h3><p>Only an approved request reaches a registered execution adapter. The current adapters are intentionally simulated.</p></div>
+<div class="card reveal"><div class="icon">#</div><div class="num">EVIDENCE</div><h3>Make accepted actions inspectable</h3><p>Each accepted event is linked into a SHA-256 hash chain and the ledger can be independently verified.</p></div>
+</div>
+<div class="statbar reveal">
+<div class="stat"><strong>12</strong><span>locked control areas</span></div>
+<div class="stat"><strong>LIVE</strong><span>deployed gateway surface</span></div>
+<div class="stat"><strong>API</strong><span>programmatic control path</span></div>
+<div class="stat"><strong>SHA-256</strong><span>tamper-evident evidence chain</span></div>
+</div>
+</div>
+</section><section id="thesis">
+<div class="wrap split">
+<div class="section-head reveal"><div class="kicker">02 / The thesis</div><h2>Capability is accelerating. Authority needs a control surface.</h2><p class="lead">As agents move from generating text to calling APIs, changing records, operating workflows and coordinating tools, the important question becomes less about what a model can say and more about what it is allowed to do.</p></div>
+<div class="quote reveal">“Treat an AI-generated action as a request for authority — not authority itself.”<small>Derviq product thesis · designed as an infrastructure principle, not a claim about every deployment.</small></div>
+</div>
+</section><section id="controls">
+<div class="wrap">
+<div class="section-head reveal"><div class="kicker">12 locked controls · one glance</div><h2>Identity. Control. Trust. Recovery.</h2><p class="lead">Four simple buckets make the 12-core architecture readable in seconds.</p></div>
+<div class="core-group reveal"><div class="core-group-title"><span>IDENTITY</span><h3>Who is acting and who gave it authority?</h3></div><div class="grid">
+<div class="card"><div class="num">01</div><h3>Agent Identity Registry</h3><p>Cross-vendor identity record for agents.</p></div><div class="card"><div class="num">02</div><h3>Delegation Graph</h3><p>Trace delegated authority across agent hierarchies.</p></div><div class="card"><div class="num">10</div><h3>Intent &amp; Authority Verification</h3><p>Check requested intent against granted authority.</p></div></div></div>
+<div class="core-group reveal"><div class="core-group-title"><span>CONTROL</span><h3>What may happen, under what conditions?</h3></div><div class="grid">
+<div class="card"><div class="num">03</div><h3>Risk &amp; Policy Engine</h3><p>Context-aware policy and risk decisions.</p></div><div class="card"><div class="num">04</div><h3>Spend &amp; Resource Guardrails</h3><p>Bound resource and exposure levels.</p></div><div class="card"><div class="num">05</div><h3>Management-by-Exception HITL</h3><p>Escalate sensitive actions to a human.</p></div><div class="card"><div class="num">06</div><h3>Degraded Execution &amp; Hard Kill</h3><p>Stop or reduce authority when conditions demand it.</p></div></div></div>
+<div class="core-group reveal"><div class="core-group-title"><span>TRUST</span><h3>Can we discover, prove and preserve what happened?</h3></div><div class="grid">
+<div class="card"><div class="num">07</div><h3>Shadow-Agent &amp; Tool Scanner</h3><p>Surface unexpected agent and tool activity.</p></div><div class="card"><div class="num">08</div><h3>Proof-of-Execution Graph</h3><p>Cryptographically link execution evidence.</p></div><div class="card"><div class="num">09</div><h3>Non-Repudiation Vault</h3><p>Preserve evidence across control domains.</p></div></div></div>
+<div class="core-group reveal"><div class="core-group-title"><span>RECOVERY</span><h3>What happens after a disputed or failed action?</h3></div><div class="grid">
+<div class="card"><div class="num">11</div><h3>Transaction Reversal &amp; State Recovery</h3><p>Use supported compensation and recovery paths.</p></div><div class="card"><div class="num">12</div><h3>Cross-Organization Dispute Resolution</h3><p>Preserve evidence and workflow for disputed actions.</p></div></div></div>
+</div>
+</section><section id="architecture">
+<div class="wrap">
+<div class="section-head reveal"><div class="kicker">03 / Architecture</div><h2>One glance: identity → risk → approval → execution → proof.</h2><p class="lead">The control plane evaluates the action before the side effect, escalates exceptions, controls execution and preserves evidence.</p></div>
+<div class="flow-wide reveal">
+<div class="flow-box"><div class="num">01</div><strong>Identity</strong><p>Bind the request to an agent record and credential.</p></div>
+<div class="flow-line">→</div>
+<div class="flow-box"><div class="num">02</div><strong>Authorization</strong><p>Match the requested action against an allow-list.</p></div>
+<div class="flow-line">→</div>
+<div class="flow-box"><div class="num">03</div><strong>Policy</strong><p>Check amount and resource limits before execution.</p></div>
+<div class="flow-line">→</div>
+<div class="flow-box"><div class="num">04</div><strong>Replay</strong><p>Reject an already-consumed agent/nonce pair.</p></div>
+</div>
+<div class="flow-wide reveal" style="margin-top:10px">
+<div class="flow-box"><div class="num">05</div><strong>Controlled execution</strong><p>Send the approved request to a registered adapter.</p></div>
+<div class="flow-line">→</div>
+<div class="flow-box"><div class="num">06</div><strong>Atomic commit</strong><p>Commit policy state, nonce and audit event together.</p></div>
+<div class="flow-line">→</div>
+<div class="flow-box"><div class="num">07</div><strong>Cryptographic evidence</strong><p>Link the event to the previous hash and compute its hash.</p></div>
+<div class="flow-line">→</div>
+<div class="flow-box"><div class="num">08</div><strong>Verification</strong><p>Recompute records and continuity to detect tampering.</p></div>
+</div>
+<div class="grid-2" style="margin-top:18px">
+<div class="code reveal"><div class="codebar"><span>request → gateway</span><span>JSON</span></div><pre>{
+  "agentId": "AGENT_01",
+  "nonce": "unique-request-id",
+  "action": "database.write",
+  "amount": 100,
+  "payload": {}
+}</pre></div>
+<div class="code reveal"><div class="codebar"><span>gateway → evidence</span><span>SHA-256</span></div><pre>previousHash
+      ↓
+policy decision
+      ↓
+controlled adapter
+      ↓
+currentHash = SHA256(
+  agentId + action + amount +
+  nonce + previousHash + timestamp
+)</pre></div>
+</div>
+</div>
+</section><section id="security">
+<div class="wrap">
+<div class="section-head reveal"><div class="kicker">04 / Security model</div><h2>Fail closed. Commit atomically. Verify later.</h2><p class="lead">The prototype focuses on clear enforcement points and honest evidence rather than pretending a demo is a finished security product.</p></div>
+<div class="split">
+<div class="layers">
+<div class="layer reveal"><div class="layer-no">01</div><div><b>Parameterized persistence</b><p>Database access is handled through the application persistence layer rather than string-built SQL.</p></div><code>DB</code></div>
+<div class="layer reveal"><div class="layer-no">02</div><div><b>API-key authentication</b><p>Authenticated control routes require the configured Derviq API key.</p></div><code>AUTH</code></div>
+<div class="layer reveal"><div class="layer-no">03</div><div><b>Bounded policy path</b><p>Requests are evaluated through identity, action and policy controls before the permitted path continues.</p></div><code>POLICY</code></div>
+<div class="layer reveal"><div class="layer-no">04</div><div><b>Evidence-backed control path</b><p>Control decisions and evidence are persisted through the application data layer for later inspection.</p></div><code>AUDIT</code></div>
+<div class="layer reveal"><div class="layer-no">05</div><div><b>Hash-chain verification</b><p>Verification recomputes record hashes and checks previous-hash continuity.</p></div><code>SHA-256</code></div>
+</div>
+<div class="card reveal">
+<div class="num">SECURITY BOUNDARY</div><h3>What this prototype does not claim</h3>
+<p style="margin-top:16px">Derviq is not presented as a production security certification, zero-knowledge system, or universal rollback layer.</p>
+<p style="margin-top:16px">Production hardening still requires environment-specific threat modeling, independent testing, credential lifecycle controls, durable storage guarantees, observability, adapter isolation and real integrations.</p>
+<div class="tag" style="display:inline-block;margin-top:14px">HONEST BY DESIGN</div>
+</div>
+</div>
+</div>
+</section><section id="api">
+<div class="wrap">
+<div class="section-head reveal"><div class="kicker">06 / Developer surface</div><h2>Simple at the edge. Strict underneath.</h2><p class="lead">The gateway is designed to become a policy enforcement point that application teams can integrate without giving an AI agent unrestricted downstream credentials.</p></div>
+<div class="code reveal"><div class="codebar"><span>POST /evaluate</span><span>preferred header: x-derviq-api-key</span></div><pre>curl -X POST https://YOUR-DERVIQ-HOST/evaluate \
   -H "Content-Type: application/json" \
-  -H "X-API-Key: YOUR_KEY" \
+  -H "x-derviq-api-key: secret123" \
   -d '{
-    "agent_id":"AGENT_01",
-    "action":"database.write",
-    "amount":100,
-    "context":{"risk":0.2}
-  }'</pre></div><div class="grid" style="margin-top:18px"><div class="card"><div class="num">ALLOW</div><h3>Permitted path</h3><p>The request satisfies configured identity and policy conditions.</p></div><div class="card"><div class="num">DENY</div><h3>Boundary rejected</h3><p>Unknown identity or policy violation stops the controlled path.</p></div><div class="card"><div class="num">VERIFY</div><h3>Evidence inspection</h3><p>The evidence chain can be checked for continuity through the API.</p></div></div></div></section>
-<section id="security"><div class="wrap"><div class="head"><div class="ey">09 / Security honesty</div><h2>Do not call a prototype magic.</h2><p class="lead">Derviq is designed around explicit boundaries and testable behavior. The website deliberately distinguishes current implementation from future infrastructure.</p></div><div class="grid2"><div class="card"><div class="num">CURRENT ENGINE</div><h3>What exists in the production-oriented core</h3><p>PostgreSQL persistence, tenant-scoped API-key authentication, agent lifecycle controls, policy evaluation, evidence hashing, verification, rate limiting, request limits and controlled HTTP execution/recovery paths.</p></div><div class="card"><div class="num">NOT AUTOMATICALLY SOLVED</div><h3>What requires real infrastructure</h3><p>Universal rollback, cloud KMS/WORM guarantees, eBPF enforcement, real financial settlement, enterprise certification and independent security testing require dedicated infrastructure, integrations and verification.</p></div></div></div></section>
-<section id="evidence"><div class="wrap"><div class="head"><div class="ey">10 / Evidence</div><h2>Trust is a record, not a slogan.</h2><p class="lead">A serious automation system eventually gets asked: “What exactly happened?”</p></div><div class="grid"><div class="card"><div class="num">WHO</div><h3>Actor identity</h3><p>Which agent requested the operation?</p></div><div class="card"><div class="num">WHAT</div><h3>Requested action</h3><p>What operation and context were submitted?</p></div><div class="card"><div class="num">WHY</div><h3>Decision context</h3><p>Which policy conditions were evaluated?</p></div><div class="card"><div class="num">WHEN</div><h3>Timeline</h3><p>When did the system receive and record the event?</p></div><div class="card"><div class="num">RESULT</div><h3>Outcome</h3><p>What did the controlled execution return?</p></div><div class="card"><div class="num">VERIFY</div><h3>Integrity</h3><p>Can the chain be recomputed and checked for continuity?</p></div></div></div></section>
-<section id="founder"><div class="wrap"><div class="head"><div class="ey">11 / Founder</div><h2>Built founder-first, from the problem outward.</h2><p class="lead">Derviq is a founder-led project focused on the emerging problem of machine authority.</p></div><div class="founder"><div class="card founderCard"><div class="avatar">SJ</div><div class="name">Shreyans Jain</div><div class="age">FOUNDER · AGE 15</div><p>Founder of Derviq, exploring AI agents, control infrastructure and the systems required when software can act on behalf of people and organizations.</p><span class="pill">AI</span><span class="pill">AGENTS</span><span class="pill">INFRASTRUCTURE</span><span class="pill">CONTROL</span></div><div class="card"><div class="num">FOUNDER NOTE</div><h3>The problem statement</h3><p>AI is moving from generating answers to taking actions. Derviq starts with a simple question: how should those actions be authorized, bounded, verified and recoverable?</p><h3>The build philosophy</h3><p>Start narrow. Make behavior observable. Test the workflow. Add complexity only when real systems require it. Keep a hard distinction between what works today and what is a future direction.</p><h3>The long-term ambition</h3><p>Make machine authority understandable and controllable across vendors, clouds, models and organizations — without forcing every company to reinvent the same control logic.</p></div></div></div></section>
-<section id="company"><div class="wrap"><div class="head"><div class="ey">12 / Company model</div><h2>From gateway to control infrastructure.</h2><p class="lead">A product-development thesis: increase the depth of control only as real customers and real workflows justify it.</p></div><div class="table"><div class="row"><div>Layer 01 · Gateway</div><div><p>Identity, policy, execution boundary and evidence.</p></div></div><div class="row"><div>Layer 02 · Reliability</div><div><p>Recovery, degraded execution, kill controls and observability.</p></div></div><div class="row"><div>Layer 03 · Integrations</div><div><p>Scoped adapters into systems customers actually use.</p></div></div><div class="row"><div>Layer 04 · Organization</div><div><p>Fleet governance, delegation graphs, policy administration and audit.</p></div></div><div class="row"><div>Layer 05 · Network</div><div><p>Potential cross-organization trust and dispute resolution where adoption justifies it.</p></div></div></div></div></section>
-<section id="moat"><div class="wrap"><div class="head"><div class="ey">13 / Defensibility</div><h2>The moat is not a chatbot wrapper.</h2><p class="lead">A durable control layer would have to become deeply integrated with real execution paths and accumulate operational knowledge that is difficult to reproduce casually.</p></div><div class="grid"><div class="card"><div class="num">01</div><h3>Policy semantics</h3><p>Machine-readable authority, exceptions and risk.</p></div><div class="card"><div class="num">02</div><h3>Execution reliability</h3><p>Predictable behavior under real-world failure.</p></div><div class="card"><div class="num">03</div><h3>Evidence history</h3><p>Structured action records and verification workflows.</p></div><div class="card"><div class="num">04</div><h3>Integrations</h3><p>Adapters and knowledge around real software systems.</p></div><div class="card"><div class="num">05</div><h3>Cross-vendor neutrality</h3><p>Useful even when models or clouds change.</p></div><div class="card"><div class="num">06</div><h3>Trust effects</h3><p>Potentially stronger machine-to-machine trust as adoption grows.</p></div></div></div></section>
-<section id="roadmap"><div class="wrap"><div class="head"><div class="ey">14 / Roadmap</div><h2>Build proof before complexity.</h2></div><div class="timeline"><div class="tl"><div class="year">PHASE 01 · NOW</div><div><h3>Control-plane MVP</h3><p>Identity, policy, guardrails, evidence and controlled execution.</p></div></div><div class="tl"><div class="year">PHASE 02</div><div><h3>Production foundations</h3><p>Secrets management, observability, isolation, durable integrations and stronger testing.</p></div></div><div class="tl"><div class="year">PHASE 03</div><div><h3>Real integrations</h3><p>Narrow workflows with threat models and measurable reliability.</p></div></div><div class="tl"><div class="year">PHASE 04</div><div><h3>Agent fleet governance</h3><p>Delegation, discovery, organization-level policy and exception management.</p></div></div><div class="tl"><div class="year">PHASE 05</div><div><h3>Cross-organization trust</h3><p>Explore stronger proof and dispute systems only where real demand supports them.</p></div></div></div></div></section>
-<section id="console"><div class="wrap"><div class="head"><div class="ey">15 / Live control console</div><h2>Now show the engine.</h2><p class="lead">The landing page ends in the actual control surface. Enter a valid Derviq API key for your deployment.</p></div><div class="console"><div class="consoleGrid"><form class="form" id="form"><label>Agent ID</label><input id="agent" value="AGENT_01"><label>API key</label><input id="key" type="password" placeholder="X-API-Key"><div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center"><button class="btn" type="button" id="saveKey">Save API key</button><button class="btn" type="button" id="clearKey">Clear</button><span id="keyStatus" style="font-size:10px;color:#8392a4">○ No API key saved</span></div><label>Action</label><select id="action"><option>database.write</option><option>read</option><option>http.request</option><option>payments.transfer</option></select><label>Amount</label><input id="amount" type="number" value="10" min="0"><label>Risk context</label><input id="risk" type="number" value="0" step="0.01"><button class="btn primary" type="submit">Evaluate request →</button><button class="btn" type="button" id="evidenceBtn">Verify evidence chain</button><button class="btn" type="button" id="healthBtn">Refresh health</button></form><div class="result"><div class="resultHead"><b>Gateway response</b><span class="live" id="status">CHECKING</span></div><pre id="out">Ready.</pre></div></div></div></div></section>
-<section id="faq"><div class="wrap"><div class="head"><div class="ey">16 / FAQ</div><h2>Clear answers. No magic.</h2></div><div class="faq"><details><summary>Is Derviq an AI model?</summary><p>No. Derviq is positioned as a control layer intended to sit across models, clouds and agent frameworks.</p></details><details><summary>Does the current demo move real money?</summary><p>No. The current demo does not claim real financial settlement.</p></details><details><summary>Is SHA-256 a zero-knowledge proof?</summary><p>No. The current evidence mechanism is a tamper-evident SHA-256 hash chain, not a zero-knowledge proof system.</p></details><details><summary>Can Derviq universally roll back anything?</summary><p>No. Recovery depends on the external system and requires workflow-specific compensation or native transaction support.</p></details><details><summary>Is the current engine enterprise-certified?</summary><p>No certification claim is made here. Enterprise deployment requires independent security review, threat modeling, operational hardening and relevant compliance work.</p></details><details><summary>What does cross-vendor mean?</summary><p>The architecture is intended not to depend on a single model provider, cloud provider or agent framework.</p></details></div></div></section>
-<section class="cta"><div class="wrap"><div class="ey">DERVIQ · CONTROL THE ACTION</div><h2>When AI gets the ability to act, authority becomes infrastructure.</h2><p>Derviq is building around that boundary with explicit identity, policy, execution, evidence and recovery.</p><div class="actions" style="justify-content:center"><a class="btn primary" href="#console">Inspect live console →</a><a class="btn" href="#top">Back to top ↑</a></div></div></section>
-</main><footer><div class="wrap"><div class="foot"><div><div class="brand">◆ DERVIQ</div><p>Independent AI Agent Control Plane.<br>Founder: Shreyans Jain · Age 15.</p></div><div><b>Explore</b><a href="#product">Product</a><a href="#controls">12 Controls</a><a href="#architecture">Architecture</a><a href="#security">Security</a></div><div><b>Use</b><a href="#use">Everyday Life</a><a href="#enterprise">Enterprise</a><a href="#developer">Developer</a><a href="#console">Console</a></div><div><b>Company</b><a href="#founder">Founder</a><a href="#moat">Defensibility</a><a href="#roadmap">Roadmap</a><a href="#faq">FAQ</a></div></div><p style="font-size:11px;border-top:1px solid #202c3b;padding-top:18px">© <span id="year"></span> Derviq. Current implementation and future product directions are explicitly distinguished on this page.</p></div></footer><div id="toast" class="toast"></div>
-<script src="/ui/app.js"></script></body></html>
+    "agent_id": "AGENT_01",
+    "nonce": "request-001",
+    "action": "database.write",
+    "amount": 100,
+    "context": {}
+  }'</pre></div>
+<div class="grid" style="margin-top:16px">
+<div class="card reveal"><div class="num">DECISION</div><h3>Allow / deny / escalate</h3><p>The policy engine returns a structured decision before an execution adapter is invoked.</p></div>
+<div class="card reveal"><div class="num">AUTH</div><h3>Identity or policy rejected</h3><p>Authentication, identity, authority and policy checks can reject an unsafe request.</p></div>
+<div class="card reveal"><div class="num">EVIDENCE</div><h3>Verify the evidence chain</h3><p>Use the evidence verification endpoint to check hash continuity and record integrity.</p></div>
+</div>
+</div>
+</section><section id="use-cases">
+<div class="wrap">
+<div class="section-head reveal"><div class="kicker">07 / Where it can fit</div><h2>One trust boundary. Many action surfaces.</h2><p class="lead">The product thesis can apply anywhere an AI system needs bounded authority over an external action.</p></div>
+<div class="grid">
+<div class="card reveal"><div class="num">SOFTWARE</div><h3>Database operations</h3><p>Put explicit authorization and policy checks between an agent and write-capable application workflows.</p></div>
+<div class="card reveal"><div class="num">FINANCE</div><h3>Payment workflows</h3><p>Route sensitive payment intents through a policy boundary. The current demo remains simulated.</p></div>
+<div class="card reveal"><div class="num">ENTERPRISE</div><h3>Internal systems</h3><p>Give agents scoped access to business actions rather than handing models broad service credentials.</p></div>
+<div class="card reveal"><div class="num">SECURITY</div><h3>High-consequence operations</h3><p>Make approval conditions and action evidence explicit for workflows where mistakes matter.</p></div>
+<div class="card reveal"><div class="num">AGENTIC</div><h3>Tool-calling systems</h3><p>Introduce a consistent enforcement layer across multiple tools and agent runtimes.</p></div>
+<div class="card reveal"><div class="num">FUTURE</div><h3>Machine authority</h3><p>Explore stronger verification and isolated adapters as AI systems extend into more operational environments.</p></div>
+</div>
+</div>
+</section><section id="founder">
+<div class="wrap">
+<div class="section-head reveal"><div class="kicker">08 / Founder</div><h2>Built from a simple question.</h2></div>
+<div class="founder">
+<div class="founder-card reveal">
+<div class="avatar">D</div>
+<h3>Founder-led infrastructure</h3>
+<small>Independent product thesis · Derviq</small>
+</div>
+<div class="reveal">
+<p class="lead">“If AI systems become capable of acting across software, data and financial workflows, where does authority actually live?”</p>
+<p style="color:var(--muted)">Derviq is being built around that boundary: the space between an AI system deciding what it wants to do and a real system allowing that action to happen.</p>
+<p style="color:var(--muted)">The founder thesis is deliberately infrastructure-first: start with a narrow, testable gateway; prove the enforcement path; then expand only where real integrations and threat models justify it.</p>
+<div class="tag">FOUNDER NOTE</div><div class="tag">INFRASTRUCTURE FIRST</div><div class="tag">EVIDENCE OVER CLAIMS</div>
+</div>
+</div>
+</div>
+</section><section id="business">
+<div class="wrap">
+<div class="section-head reveal"><div class="kicker">09 / Company lens</div><h2>A product architecture that can expand with agent capability.</h2><p class="lead">The following is a product-development hypothesis, not a claim of current traction, market share or guaranteed outcomes.</p></div>
+<div class="investor-grid">
+<div class="matrix reveal">
+<div class="row head"><div>Layer</div><div>Product direction</div></div>
+<div class="row"><div><b>Gateway</b></div><div>Identity, authorization, policy, replay and execution control.</div></div>
+<div class="row"><div><b>Evidence</b></div><div>Audit integrity, verification APIs and structured action records.</div></div>
+<div class="row"><div><b>Integrations</b></div><div>Scoped adapters for software systems and sensitive workflows.</div></div>
+<div class="row"><div><b>Enterprise control</b></div><div>Credential lifecycle, policy administration, observability and fleet-level governance.</div></div>
+<div class="row"><div><b>Long-term research</b></div><div>Stronger verification mechanisms and agent-to-agent trust where justified by real demand.</div></div>
+</div>
+<div class="card reveal"><div class="num">MOAT DIRECTION</div><h3>Policy + evidence + integrations</h3><p>The potential defensibility is not a logo or a single API call. It would come from deeply integrated policy semantics, reliable execution controls, evidence workflows and the operational knowledge required to make those systems dependable.</p><h3 style="margin-top:24px">Business model hypothesis</h3><p>Enterprise software could be structured around gateway usage, policy administration, managed integrations and governance capabilities. Pricing should follow real deployment economics rather than an invented headline number.</p></div>
+</div>
+</div>
+</section><section id="roadmap">
+<div class="wrap">
+<div class="section-head reveal"><div class="kicker">10 / Roadmap</div><h2>Build proof before complexity.</h2><p class="lead">Each phase increases real-world authority only after the previous control surface is testable.</p></div>
+<div class="roadmap reveal">
+<div class="phase"><b>PHASE 01 · NOW</b><h3>Gateway MVP</h3><p>Identity, permissions, policy limits, replay protection, simulated execution, atomic ledger commits and verification.</p></div>
+<div class="phase"><b>PHASE 02 · NEXT</b><h3>Production foundations</h3><p>Credential lifecycle, secrets management, observability, rate limiting, durable storage and isolated adapters.</p></div>
+<div class="phase"><b>PHASE 03 · VALIDATION</b><h3>Real integrations</h3><p>Deploy narrowly with selected workflows, threat models, adversarial tests and measurable operational outcomes.</p></div>
+<div class="phase"><b>PHASE 04 · EXPANSION</b><h3>Trust infrastructure</h3><p>Broaden policy and evidence capabilities only where customer demand and security evidence support the expansion.</p></div>
+</div>
+</div>
+</section><section id="faq">
+<div class="wrap">
+<div class="section-head reveal"><div class="kicker">11 / Questions</div><h2>Clear answers, no magic.</h2></div>
+<div class="faq">
+
+
+
+
+
+<details class="reveal"><summary>Who is the initial buyer?</summary><p>Teams already deploying action-capable agents: agent platforms, enterprise AI teams, SaaS automation products and sensitive operational workflows. The next proof is willingness to pay in design-partner deployments.</p></details><details class="reveal"><summary>Does the public demo move real money?</summary><p>No. The public console evaluates control decisions and evidence paths; it does not perform real financial settlement.</p></details><details class="reveal"><summary>Is the evidence chain immutable?</summary><p>The current mechanism is a tamper-evident SHA-256 hash chain. True WORM storage or hardware/KMS-backed custody would require additional infrastructure.</p></details><details class="reveal"><summary>Can Derviq roll back any agent action?</summary><p>No. Recovery is supported where a defined compensation path exists. Universal rollback across arbitrary external systems is not claimed.</p></details><details class="reveal"><summary>What proves the next stage?</summary><p>Real design partners, measurable blocked-risk events, approval behavior, reliability metrics, integration depth and repeat usage.</p></details></div>
+</div>
+</section></main>
+<footer>
+<div class="wrap">
+<div class="foot">
+<div><a class="logo" href="#top"><span class="logo-mark"></span>DERVIQ</a><p>Company: DerviqProduct: Derviq Control PlaneControl plane: Derviq</p></div>
+<div><b>Explore</b><a href="#product">Product</a><a href="#architecture">Architecture</a><a href="#security">Security</a><a href="#demo">Demo</a></div>
+<div><b>Company</b><a href="#founder">Founder</a><a href="#business">Company lens</a><a href="#roadmap">Roadmap</a><a href="#faq">FAQ</a></div>
+<div><b>Principles</b><a href="#security">Fail closed</a><a href="#architecture">Bounded authority</a><a href="#security">Evidence</a><a href="#product">Infrastructure first</a></div>
+</div>
+<div class="fine">© <span id="year"></span> Derviq. Current control capabilities and infrastructure dependencies are disclosed on this page. “The control plane for AI agent actions.”</div>
+</div>
+</footer>
+<div class="toast" id="toast"></div>
+<script>
+const $=s=>document.querySelector(s);
+function toast(msg){const t=$("#toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2600)}
+function setResult(data,code){$("#result").textContent=JSON.stringify(data,null,2);$("#resultStatus").textContent=code?String(code):"READY";$("#resultStatus").style.color=code&&code>=400?"var(--red)":"var(--mint)"}
+function newNonce(){return "DERVIQ_"+Date.now()+"_"+Math.random().toString(36).slice(2,9)}
+$("#nonce").value=newNonce();
+const savedKey=localStorage.getItem("derviq_api_key"); if(savedKey) $("#apiKey").value=savedKey;
+$("#apiKey").addEventListener("change",()=>localStorage.setItem("derviq_api_key",$("#apiKey").value));
+$("#demoForm").addEventListener("submit",async e=>{
+ e.preventDefault();
+ const body={agent_id:$("#agentId").value.trim(),action:$("#action").value,amount:Number($("#amount").value),context:{source:"public-demo"}};
+ setResult({status:"PROCESSING",message:"Sending request to the gateway…"},"RUNNING");
+ try{
+   const r=await fetch("/evaluate",{method:"POST",headers:{"Content-Type":"application/json","x-derviq-api-key":$("#apiKey").value.trim()},body:JSON.stringify(body)});
+   const d=await r.json();setResult(d,r.status);
+   if(r.ok){toast("Policy decision returned.");$("#nonce").value=newNonce()}else toast("Gateway rejected the request — inspect the response.");
+ }catch(err){setResult({status:"ERROR",message:"Gateway unavailable",detail:String(err)},"ERROR");toast("Could not reach the gateway.")}
+});
+async function checkHealth(){
+ try{const r=await fetch("/health");const d=await r.json();$("#healthBadge").textContent=(d.status||"ok").toUpperCase()+" · LIVE";$("#healthBadge").style.color="var(--mint)"}catch{ $("#healthBadge").textContent="OFFLINE";$("#healthBadge").style.color="var(--red)"}
+}
+async function verifyLedger(){
+ try{const r=await fetch("/evidence/verify");const d=await r.json();setResult(d,r.status);toast(d.valid===false?"Evidence verification failed.":"Evidence chain checked.")}catch{toast("Verification endpoint unavailable")}
+}
+checkHealth();setInterval(checkHealth,10000);$("#year").textContent=new Date().getFullYear();
+const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("in")}),{threshold:.08});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
